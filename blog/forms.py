@@ -13,5 +13,6 @@ from django import forms
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        # the body field for the user to complete. This field is imported from the Comment model
+        # the body field for the user to complete.
+        # This field is imported from the Comment model
         fields = ('body',)
