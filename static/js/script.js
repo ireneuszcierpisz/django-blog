@@ -1,1 +1,0 @@
-console.log("Hey, it is JS message from django static/js/script.js file!");
