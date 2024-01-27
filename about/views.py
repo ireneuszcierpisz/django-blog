@@ -13,7 +13,6 @@ def about_me(request):
     about = About.objects.all().order_by('-updated_on').first()
     
     if request.method == "POST":
-        print("Received a POST request from collaborate form.")
         collaborate_form = CollaborateForm(data=request.POST)
         if collaborate_form.is_valid:
             collaborate_form.save()

@@ -33,7 +33,6 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
     if request.method == "POST":
-        print("Received a POST request")
         # create an instance of the CommentForm class
         # using the form data that was sent in the POST request.
         comment_form = CommentForm(data=request.POST)
@@ -64,7 +63,6 @@ def post_detail(request, slug):
     # this line resets the content of the form to blank
     # so that a user can write a second comment if they wish.
     comment_form = CommentForm()
-    print("About to render template")
     return render(
         request,
         "blog/post_detail.html",
